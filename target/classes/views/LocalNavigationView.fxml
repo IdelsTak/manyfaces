@@ -2,14 +2,19 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXToggleNode?>
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.idelstak.sample.ui.controllers.LocalNavigationViewController">
     <children>
@@ -21,11 +26,11 @@
                </image></ImageView>
             <VBox styleClass="navigation-bar-container">
                <children>
-                  <JFXToggleNode fx:id="homeToggle" styleClass="navigation-bar-button" text="Home" />
-                  <JFXToggleNode fx:id="newProfileToggle" styleClass="navigation-bar-button" text="New browser profile" />
-                  <JFXToggleNode fx:id="accountToggle" styleClass="navigation-bar-button" text="My account" />
-                  <JFXToggleNode fx:id="pluginsToggle" layoutX="20.0" layoutY="202.0" styleClass="navigation-bar-button" text="Plugins" />
-                  <JFXToggleNode fx:id="helpToggle" layoutX="20.0" layoutY="234.0" styleClass="navigation-bar-button" text="Help &amp; Support" />
+                  <JFXToggleNode fx:id="homeToggle" styleClass="navigation-bar-toggle" text="Home" />
+                  <JFXToggleNode fx:id="newProfileToggle" styleClass="navigation-bar-toggle" text="New browser profile" />
+                  <JFXToggleNode fx:id="accountToggle" styleClass="navigation-bar-toggle" text="My account" />
+                  <JFXToggleNode fx:id="pluginsToggle" layoutX="20.0" layoutY="202.0" styleClass="navigation-bar-toggle" text="Plugins" />
+                  <JFXToggleNode fx:id="helpToggle" layoutX="20.0" layoutY="234.0" styleClass="navigation-bar-toggle" text="Help &amp; Support" />
                </children>
                <padding>
                   <Insets left="10.0" />
@@ -34,10 +39,56 @@
             <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" />
             <HBox styleClass="navigation-bar-container">
                <children>
-                  <JFXButton styleClass="navigation-bar-button" text="GROUPS" />
-                  <JFXButton layoutX="10.0" layoutY="10.0" styleClass="navigation-bar-button" />
+                  <JFXButton focusTraversable="false" styleClass="navigation-bar-button" text="GROUPS" />
+                  <HBox HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="groupsButton" layoutX="10.0" layoutY="10.0">
+                     <graphic>
+                        <FontIcon iconColor="#96c3ff" iconLiteral="mdi-settings" styleClass="icon-unfocused" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="navigation-bar-button" />
+                        <String fx:value="hand-cursor" />
+                     </styleClass></JFXButton>
                </children>
             </HBox>
+            <Pane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2.0" prefWidth="192.0" style="-fx-background-color: #436cfe;" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets left="24.0" right="24.0" />
+               </VBox.margin>
+            </Pane>
+            <VBox prefHeight="180.0" VBox.vgrow="ALWAYS" />
+            <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="75.0" prefWidth="100.0" spacing="6.0" style="-fx-background-color: #2258d7;" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" />
+               </VBox.margin>
+               <children>
+                  <HBox VBox.vgrow="NEVER">
+                     <children>
+                        <HBox HBox.hgrow="ALWAYS" />
+                        <Label focusTraversable="false" prefHeight="24.0" style="-fx-font-family: Roboto; -fx-font-size: 14; -fx-text-fill: white;" text="Free" />
+                        <Hyperlink style="-fx-font-family: Roboto; -fx-font-size: 14; -fx-text-fill: yellow;" text="Upgrade" />
+                        <HBox HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets top="4.0" />
+                     </padding>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <HBox HBox.hgrow="ALWAYS" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Roboto; -fx-font-size: 14; -fx-fill: white;" text="5 / 10" />
+                        <HBox layoutX="35.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox HBox.hgrow="ALWAYS" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Roboto; -fx-font-size: 12; -fx-fill: #74a3f3;" text="browser profiles in use" />
+                        <HBox HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
             </children>
         </VBox>
     </children>
