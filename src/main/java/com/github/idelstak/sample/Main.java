@@ -48,8 +48,7 @@ public class Main extends Application {
         LOG.log(Level.INFO, "Controller: {0}", controller);
         
         controller.setPagesPane(pagesPane);
-
-
+        
         stage.setTitle("Many Faces - alpha");
         stage.setScene(new Scene(mainWindow));
         stage.setMaximized(true);
