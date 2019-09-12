@@ -8,7 +8,6 @@ package com.github.idelstak.sample;
 import com.github.idelstak.sample.ui.controllers.LocalNavigationViewController;
 import java.io.IOException;
 import java.net.URL;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -45,9 +44,7 @@ public class Main extends Application {
         mainWindow.setLeft(navigationPane);
         mainWindow.setCenter(pagesPane);
         
-        LOG.log(Level.INFO, "Controller: {0}", controller);
-        
-        controller.setPagesPane(pagesPane);
+        controller.setPagesContainer(pagesPane);
         
         stage.setTitle("Many Faces - alpha");
         stage.setScene(new Scene(mainWindow));
