@@ -1,5 +1,9 @@
 
-.navigation-bar{
+/*.root{
+    -fx-font-family: "Roboto";
+}*/
+
+.navigation-bar {
     -fx-background-color: #0d3fb9;
     -fx-pref-width: 240;
     -fx-pref-height: 600;
@@ -8,54 +12,54 @@
     -fx-max-width: -fx-pref-width;
 }
 
-.navigation-bar-container{
+.navigation-bar-container {
     -fx-padding: 0 10 0 10;
 }
 
-.navigation-bar-logo{
+.navigation-bar-logo {
     -fx-image: url(../images/nav-bar-logo.png);
 }
 
-.navigation-bar-toggle, .navigation-bar-button{
+.navigation-bar-toggle, .navigation-bar-button {
     -fx-font-family: "Roboto";
     -fx-font-size: 16.0;
     -fx-text-fill: #a7d0ff;
 }
 
-.navigation-bar-toggle{
+.navigation-bar-toggle {
     -fx-padding: 6 6 6 6;
     -jfx-toggle-color: #0d3fb9;
     -jfx-untoggle-color: #0d3fb9;
     -fx-cursor: hand;
 }
 
-.navigation-bar-button .jfx-rippler, .navigation-bar-toggle .jfx-rippler{
+.navigation-bar-button .jfx-rippler, .navigation-bar-toggle .jfx-rippler {
     -jfx-rippler-fill: #0d3fb9;
 }
 
-.navigation-bar-toggle:selected{
+.navigation-bar-toggle:selected {
     -fx-text-fill: white;
 }
 
-.icon-unfocused{
+.icon-unfocused {
     -fx-icon-color: #96c3ff;
 }
 
-.icon-focused{
+.icon-focused {
     -fx-icon-color: #8eb9f3;
 }
 
-.hand-cursor{
+.hand-cursor {
     -fx-cursor: hand;
 }
 
-.page-header-area{
+.page-header-area {
     -fx-pref-height: 60;
     -fx-min-height: -fx-pref-height;
     -fx-background-color: white;
 }
 
-.page-header-text{
+.page-header-text {
     -fx-font-family: "Roboto Light";
     -fx-font-size: 20.0;
     -fx-fill: #c4c9ce;
@@ -77,51 +81,151 @@ Tabbed pane structure:
 */
 
 .mf-tab-pane {
-    -fx-tab-min-width:160px; 
-    -fx-tab-max-width:160px;
-    -fx-tab-min-height:45px;
-    -fx-tab-max-height:45px;
+    -fx-tab-min-width: 160px;
+    -fx-tab-max-width: 160px;
+    -fx-tab-min-height: 45px;
+    -fx-tab-max-height: 45px;
 }
 
-.mf-tab-pane .headers-region{
+.mf-tab-pane .headers-region {
     -fx-background-color: white;
 }
 
 /*Issue #636: remove the shadow of JFXTabPane*/
-.jfx-tab-pane .depth-container{
+.jfx-tab-pane .depth-container {
     -fx-effect: none;
 }
 
-.mf-tab-pane .headers-region .jfx-rippler{
+.mf-tab-pane .headers-region .jfx-rippler {
     -jfx-rippler-fill: #eaeffa;
 }
 
-.mf-tab-pane .tab-header-background{
+.mf-tab-pane .tab-header-background {
     -fx-background-color: white;
 }
 
-.mf-tab-pane .tab-selected-line{
+.mf-tab-pane .tab-selected-line {
     -fx-pref-width: 1px !important;
     -fx-pref-height: 2px;
     -fx-background-color: #174bc9;
 }
 
-.mf-tab-pane .tab .tab-label{
+.mf-tab-pane .tab .tab-label {
     -fx-font-family: "Roboto Medium";
     -fx-font-size: 14.0;
     -fx-text-fill: #868686;
 }
 
-.mf-tab-content-area{
+.mf-tab-content-area {
     -fx-background-color: white; 
     -fx-border-color: #e1e3e7; 
     -fx-border-width: 1 0 0 0;
 }
 
-.mf-textfield .input-line{
+.mf-textfield .input-line {
     -fx-background-color: TRANSPARENT;
 }
 
-.mf-textfield .input-focused-line{
+.mf-textfield .input-focused-line {
     -fx-background-color: TRANSPARENT;
+}
+
+.jfx-text-field {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14.0;
+    -fx-prompt-text-fill: #7b7b7b;
+    -fx-border-color: #949494;
+    -fx-border-width: 1 1 1 1;
+    -fx-pref-width: 208;
+    -fx-pref-height: 27;
+    -fx-padding: 0 0 0 1;
+}
+
+.jfx-text-field > .input-line {
+    -fx-pref-height: 0px;
+    -fx-max-height: 0px;
+}
+
+.jfx-text-field > .input-focused-line {
+    -fx-pref-height: 0px;
+    -fx-max-height: 0px;
+}
+
+.jfx-toggle-node {
+    -jfx-toggle-color: #f3f3f3;
+    -jfx-untoggle-color: transparent;
+}
+
+.action-button, .jfx-toggle-node {
+    -fx-background-radius: 42px;
+    -fx-pref-height: 42px;
+    -fx-pref-width: 42px;
+    -fx-min-width: -fx-pref-width;
+    -fx-max-width: -fx-pref-width;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -fx-cursor: hand;
+}
+
+.action-button:hover, .jfx-toggle-node:hover{
+    -fx-background-color: #f3f3f3;
+}
+
+.action-button .jfx-rippler, .jfx-toggle-node .jfx-rippler {
+    -jfx-rippler-fill: #f3f3f3;
+}
+
+.action-icon {
+    -fx-icon-size: 22px;
+    -fx-icon-color: #cdd2d6;
+}
+
+.action-icon-focused-color {
+    /*Display a blue color*/
+    -fx-icon-color: #0d42c2;
+}
+
+/*.action-icon-unfocused-color {
+    Display a gray color
+    -fx-icon-color: #cdd2d6;
+}*/
+
+/*A titledpane without the 'title' part
+only the collapsible pane remains*/
+.titled-pane > .title {
+    -fx-pref-height: 0;
+    -fx-cursor: none;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}
+
+.titled-pane > .title > .arrow-button {
+    -fx-padding: 0;
+}
+
+.titled-pane > .title > .arrow-button > .arrow {
+    -fx-background-color: null;
+    -fx-padding: 0;
+}
+
+.titled-pane > *.content {
+    -fx-border-color: null;
+    -fx-border-insets: 0;
+    -fx-background-color: transparent;
+}
+
+.operations-font-style .jfx-check-box, .operations-font-style .jfx-button{
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14.0;
+    -fx-text-fill: #174bc9;
+    -jfx-checked-color: #174bc9;
+}
+
+.jfx-check-box .jfx-rippler{
+    -jfx-rippler-fill: #8ca6e4;
+}
+
+.operations-font-style .jfx-button:disabled{
+    -fx-text-fill: #8ba5e4;
 }
