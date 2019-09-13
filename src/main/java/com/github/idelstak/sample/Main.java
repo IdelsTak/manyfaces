@@ -18,6 +18,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
+ The application's entry point.
 
  @author Hiram K <hiram.kamau@outlook.com>
  */
@@ -26,6 +27,9 @@ public class Main extends Application {
     private static final Logger LOG = Logger.getLogger(Main.class.getName());
 
     /**
+     Launches the application.
+
+     @see Application#launch(String... args);
      @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -34,18 +38,28 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        //Locate the navigation bar's fxml
         URL url = getClass().getResource("/views/LocalNavigationView.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(url);
+        //Load its object heirarchy
         Node navigationPane = fxmlLoader.load();
+        //If load successful, retrieve the form's controller
         LocalNavigationViewController controller = fxmlLoader.getController();
+        //Create the area that will hold the
+        //views selected on the in the navigation bar
         BorderPane mainWindow = new BorderPane();
-        AnchorPane pagesPane = new AnchorPane();
-        
+        AnchorPane pagesCointainer = new AnchorPane();
+        //Set the navigation bar to the left of
+        //of the main window
         mainWindow.setLeft(navigationPane);
-        mainWindow.setCenter(pagesPane);
-        
-        controller.setPagesContainer(pagesPane);
-        
+        //Set the pane that will hold the details
+        //of the navigation's selection to the center
+        mainWindow.setCenter(pagesCointainer);
+        //Attach the area that will hold the details
+        //of the navigation's selection to the navigation
+        //bar's controller
+        controller.setPagesContainer(pagesCointainer);
+        //Initialize the main window
         stage.setTitle("Many Faces - alpha");
         stage.setScene(new Scene(mainWindow));
         stage.setMaximized(true);
