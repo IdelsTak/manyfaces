@@ -1,2 +1,3 @@
 com/github/idelstak/sample/Main.class
+com/github/idelstak/sample/ui/controllers/HomeViewController.class
 com/github/idelstak/sample/ui/controllers/LocalNavigationViewController.class
