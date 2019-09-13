@@ -4,6 +4,11 @@ nb-configuration.xml
 # java specific
 *.bak
 *.class
+*.log
+*.class
 
 /build
 /target/
+classes/
+
+
