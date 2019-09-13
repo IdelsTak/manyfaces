@@ -5,18 +5,23 @@
  */
 package com.github.idelstak.sample.ui.controllers;
 
-import com.jfoenix.controls.JFXToggleNode;
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 /**
  FXML Controller class
@@ -27,17 +32,23 @@ public class LocalNavigationViewController {
 
     private static final Logger LOG;
     @FXML
-    private JFXToggleNode homeToggle;
+    private RadioButton homeToggle;
     @FXML
-    private JFXToggleNode newProfileToggle;
+    private RadioButton newProfileToggle;
     @FXML
-    private JFXToggleNode accountToggle;
+    private RadioButton accountToggle;
     @FXML
-    private JFXToggleNode pluginsToggle;
+    private RadioButton pluginsToggle;
     @FXML
-    private JFXToggleNode helpToggle;
+    private RadioButton helpToggle;
+    @FXML
+    private JFXButton groupSettingsButton;
+    @FXML
+    private FontIcon groupSettingsIcon;
     private AnchorPane pagesContainer;
     private Label sampleLabel;
+    private AnchorPane homePage;
+    private AnchorPane samplePage;
 
     static {
         LOG = Logger.getLogger(LocalNavigationViewController.class.getName());
@@ -49,18 +60,17 @@ public class LocalNavigationViewController {
                 "Pages pane should not be null");
 
         URL url = getClass().getResource("/views/SamplePageView.fxml");
-        Optional<AnchorPane> samplePage = Optional.empty();
+        Optional<AnchorPane> optionalPage = Optional.empty();
 
         try {
-            samplePage = Optional.ofNullable(FXMLLoader.load(url));
+            optionalPage = Optional.ofNullable(FXMLLoader.load(url));
         } catch (IOException ex) {
             LOG.log(Level.SEVERE, null, ex);
         }
 
-        samplePage.ifPresent(this::addSamplePageToContainer);
-
-        sampleLabel = samplePage.map(pane -> {
-            return (Label) pane.lookup("#sampleLabel");
+        samplePage = optionalPage.orElse(null);
+        sampleLabel = optionalPage.map(page -> {
+            return (Label) page.lookup("#sampleLabel");
         }).orElse(null);
 
         initSelection();
@@ -75,21 +85,64 @@ public class LocalNavigationViewController {
      Initializes the controller class.
      */
     @FXML
-    void initialize() {
-        ToggleGroup group = new ToggleGroup();
+    void initialize() throws IOException {
+        RadioButton[] toggles = new RadioButton[]{homeToggle,
+                                                  newProfileToggle,
+                                                  accountToggle,
+                                                  pluginsToggle,
+                                                  helpToggle};
 
-        group.getToggles().addAll(
-                homeToggle,
-                newProfileToggle,
-                accountToggle,
-                pluginsToggle,
-                helpToggle);
+        new ToggleGroup().getToggles().addAll(Arrays.asList(toggles));
+        //Remove the radio button styling for each toggle
+        Arrays.stream(toggles).forEach(t -> t.getStyleClass().remove("radio-button"));
 
-        homeToggle.setOnAction(e -> goToHomePage());
-        newProfileToggle.setOnAction(e -> goToNewProfilePage());
-        accountToggle.setOnAction(e -> goToAccountPage());
-        pluginsToggle.setOnAction(e -> goToPluginsPage());
-        helpToggle.setOnAction(e -> goToHelpPage());
+        homePage = FXMLLoader.load(getClass().getResource("/views/HomeView.fxml"));
+    }
+
+    @FXML
+    void addFocusedIconColor() {
+        groupSettingsIcon.getStyleClass().remove("icon-unfocused");
+        groupSettingsIcon.getStyleClass().add("icon-focused");
+    }
+
+    @FXML
+    void addUnfocusedIconColor() {
+        groupSettingsIcon.getStyleClass().remove("icon-focused");
+        groupSettingsIcon.getStyleClass().add("icon-unfocused");
+    }
+
+    @FXML
+    void goToHomePage() {
+        addPageToContainer(homePage);
+    }
+
+    @FXML
+    void goToNewProfilePage() {
+        sampleLabel.setText("<Profile page goes here>");
+        addPageToContainer(samplePage);
+    }
+
+    @FXML
+    void goToAccountPage() {
+        sampleLabel.setText("<Account page goes here>");
+        addPageToContainer(samplePage);
+    }
+
+    @FXML
+    void goToPluginsPage() {
+        sampleLabel.setText("<Plugins page goes here>");
+        addPageToContainer(samplePage);
+    }
+
+    @FXML
+    void goToHelpPage() {
+        sampleLabel.setText("<Help page goes here>");
+        addPageToContainer(samplePage);
+    }
+
+    @FXML
+    void displayGroupSettings() {
+        //TODO
     }
 
     private void initSelection() {
@@ -97,33 +150,16 @@ public class LocalNavigationViewController {
         goToHomePage();
     }
 
-    private void goToHomePage() {
-        sampleLabel.setText("<Home page goes here>");
-    }
+    private void addPageToContainer(AnchorPane page) {
+        ObservableList<Node> children = pagesContainer.getChildren();
 
-    private void goToNewProfilePage() {
-        sampleLabel.setText("<Profile page goes here>");
-    }
+        children.clear();
+        children.add(page);
 
-    private void goToAccountPage() {
-        sampleLabel.setText("<Account page goes here>");
-    }
-
-    private void goToPluginsPage() {
-        sampleLabel.setText("<Plugins page goes here>");
-    }
-
-    private void goToHelpPage() {
-        sampleLabel.setText("<Help page goes here>");
-    }
-
-    private void addSamplePageToContainer(AnchorPane samplePage) {
-        this.pagesContainer.getChildren().add(samplePage);
-
-        AnchorPane.setTopAnchor(samplePage, 0.0);
-        AnchorPane.setBottomAnchor(samplePage, 0.0);
-        AnchorPane.setLeftAnchor(samplePage, 0.0);
-        AnchorPane.setRightAnchor(samplePage, 0.0);
+        AnchorPane.setTopAnchor(page, 0.0);
+        AnchorPane.setBottomAnchor(page, 0.0);
+        AnchorPane.setLeftAnchor(page, 0.0);
+        AnchorPane.setRightAnchor(page, 0.0);
     }
 
 }
