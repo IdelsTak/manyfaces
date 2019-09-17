@@ -1,0 +1,29 @@
+/* 
+    Created on : Sep 17, 2019
+    Author     : Hiram K <hiram.kamau@outlook.com>
+*/
+.home-logo {
+    -fx-image: url(../images/home-logo.png);
+}
+
+.menu-pane {
+    -fx-padding: 0 0 0 25;
+    -fx-background-color: transparent;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16px;
+    -fx-pref-height: 150px;
+    -fx-spacing: 15px;
+    -fx-background-color: #0d3fb9;
+}
+
+.menu-toggle-node {
+    -fx-text-fill: #98c2f9;
+}
+
+.menu-toggle-node:selected {
+    -fx-text-fill: #ffffff;
+}
+
+.menu-toggle-node:disabled {
+    -fx-text-fill: #5a87dc;
+}

@@ -1,0 +1,48 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.page-header {
+    -fx-pref-width: 708px;
+    -fx-pref-height: 65px;
+    -fx-min-width: -fx-pref-width;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    /*Draw the border on the bottom side only*/
+    /*-fx-border-color: transparent transparent #e0e2e7 transparent;*/
+    /*A red border for testing purposes*/
+    /*-fx-border-color: red;*/
+    -fx-background-color: white; 
+    -fx-padding: 0 32 0 35;
+}
+
+.icon {
+    -fx-icon-color: #1547bf;
+    -fx-icon-size: 24px;
+    /*This is how one can set the icon literal*/
+    -fx-icon-code: "mdi-bell";
+}
+
+.icon:disabled {
+    -fx-icon-color: #e0e2e7;
+}
+
+.page-header-text {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 19px;
+    -fx-fill: #b4bbc2;
+}
+
+.toggle-node {
+    -fx-pref-width: 42px;
+    -fx-pref-height: 42px;
+    -fx-min-width: -fx-pref-width;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-width: -fx-pref-width;
+    -fx-max-height: -fx-pref-height;
+    -fx-background-radius: 24px;
+}
+
+.toggle-node .jfx-rippler {
+    -jfx-rippler-fill: #dadada;
+}

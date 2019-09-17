@@ -1,0 +1,154 @@
+.root {
+    -fx-background-color: white;
+}
+/*A titledpane without the 'title' part
+only the collapsible pane remains*/
+.titled-pane > .title {
+    -fx-pref-height: 0;
+    -fx-cursor: null;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}
+
+.titled-pane > .title > .arrow-button {
+    -fx-padding: 0;
+}
+
+.titled-pane > .title > .arrow-button > .arrow {
+    -fx-background-color: null;
+    -fx-padding: 0;
+}
+
+.titled-pane > *.content {
+    -fx-border-color: null;
+    -fx-border-insets: 0;
+    -fx-background-color: white;
+}
+
+.jfx-text-field {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #7b7b7b;
+    -fx-border-color: #949494;
+    -fx-border-width: 1 1 1 1;
+    -fx-pref-width: 208px;
+    -fx-pref-height: 27px;
+    -fx-padding: 0 0 0 1;
+}
+
+.jfx-text-field > .input-line {
+    -fx-pref-height: 0px;
+    -fx-max-height: 0px;
+}
+
+.jfx-text-field > .input-focused-line {
+    -fx-pref-height: 0px;
+    -fx-max-height: 0px;
+}
+
+.jfx-toggle-node {
+    -fx-background-radius: 24px;
+    -fx-pref-height: 42px;
+    -fx-pref-width: 42px;
+    -fx-min-width: -fx-pref-width;
+    -fx-max-width: -fx-pref-width;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -fx-cursor: hand;
+}
+
+.jfx-toggle-node .jfx-rippler {
+    -jfx-rippler-fill: #dadada;
+}
+
+.ikonli-font-icon {
+    -fx-icon-size: 24px;
+    -fx-icon-color: #1547bf;
+}
+
+.ikonli-font-icon:disabled {
+    -fx-icon-color: #e0e2e7;
+}
+
+.jfx-check-box, .jfx-button{
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14.0;
+    -fx-text-fill: #174bc9;
+    -jfx-checked-color: #174bc9;
+}
+
+.jfx-button:disabled{
+    -fx-text-fill: #8ba5e4;
+}
+.jfx-check-box .jfx-rippler{
+    -jfx-rippler-fill: #8ca6e4;
+}
+
+.table-view {
+    -fx-font-family: "Roboto";
+    /*For testing purposes*/
+    /*-fx-border-color: blueviolet;*/
+}
+
+.table-view, .table-view:focused {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.table-view .column-header,
+.table-view .filler,
+.table-view > .column-header-background > .show-hide-columns-button,
+.table-view:constrained-resize .filler {
+    -fx-background-color: white;
+    -fx-background-insets: 0 0 0 0;
+    -fx-font-weight: normal;
+    -fx-size: 24px;
+    /*-fx-text-fill: red;*/
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: white white gainsboro white;
+}
+
+.table-view .column-header .label {
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 8 0;
+}
+
+.table-view .arrow {
+    -fx-background-color: white;
+    /*-fx-padding: 0.25em 0.3125em 0.25em 0.3125em;  3 3.75 3 3.75 */
+    -fx-padding: 3 3 3 3; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.table-row-cell:odd {
+    -fx-background: -fx-control-inner-background;
+}
+
+.table-row-cell:filled {
+    -fx-padding: 0.166667em;  /*2px, plus border adds 1px */
+    -fx-border-color: white white gainsboro white;
+}
+
+.table-cell,
+.table-row-cell,
+.table-row-cell:filled:selected,
+.table-row-cell:filled > .table-cell:selected {
+    -fx-background: white;
+    -fx-table-cell-border-color: white;
+    -fx-cell-size: 3.3em;
+}
+
+.profile-name-label {
+
+}
+
+.profile-name-label:hover {
+    -fx-font-weight: bold;
+}
+
+.profile-row-toggle {
+    -fx-padding: 0 6 0 0;
+}
+
