@@ -2,13 +2,17 @@
     Created on : Sep 17, 2019
     Author     : Hiram K <hiram.kamau@outlook.com>
 */
+/*.root {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16px;
+}*/
 .home-logo {
     -fx-image: url(../images/home-logo.png);
 }
 
 .menu-pane {
     -fx-padding: 0 0 0 25;
-    -fx-background-color: transparent;
+    /*-fx-background-color: transparent;*/
     -fx-font-family: "Roboto";
     -fx-font-size: 16px;
     -fx-pref-height: 150px;
@@ -17,6 +21,7 @@
 }
 
 .menu-toggle-node {
+    -fx-cursor: hand;
     -fx-text-fill: #98c2f9;
 }
 
@@ -26,4 +31,94 @@
 
 .menu-toggle-node:disabled {
     -fx-text-fill: #5a87dc;
+}
+
+.spacer-box {
+    -fx-pref-height: 60px;
+    -fx-min-height: -fx-pref-height;
+    -fx-background-color: #0d3fb9;
+}
+
+.groups-header-area {
+    -fx-pref-height: 26px;
+    -fx-min-height: -fx-pref-height;
+    -fx-background-color: #0d3fb9;
+}
+
+.groups-header-area > .groups-header-box {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 16px;
+    -fx-pref-height: 26px;
+    -fx-min-height: -fx-pref-height;
+    -fx-border-color: transparent transparent #436cfe transparent;
+}
+
+.groups-header-box > .label {
+    -fx-text-fill: #94c0fe;
+}
+
+.groups-header-box > .jfx-button {
+    -fx-pref-width: 16px;
+    -fx-pref-height: 16px;
+    -fx-min-width: -fx-pref-width;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-width: -fx-pref-width;
+    -fx-max-height: -fx-pref-height;
+    -fx-background: #0d3fb9;
+    -fx-cursor: hand;
+}
+
+.groups-header-box > .jfx-button .jfx-rippler {
+    -jfx-rippler-fill: #0d3fb9;
+}
+
+.groups-header-box > .jfx-button > .ikonli-font-icon {
+    -fx-icon-size: 16px;
+    -fx-icon-color: #94c0fe;
+}
+
+.group-list-area {
+    -fx-background-color: #0d3fb9;
+    -fx-pref-height: 220px;
+    -fx-min-height: -fx-pref-height;
+}
+
+.scroll-pane {
+    -fx-background-color: #0d3fb9;
+    -fx-padding: 30 25 0 25;
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 0.5em;
+}
+
+.scroll-pane .scroll-bar:vertical .increment-button,
+.scroll-pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 2 0 0;
+}
+
+.scroll-pane .scroll-bar .increment-arrow,
+.scroll-pane .scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #0c39a6;
+    -fx-background-insets: 1, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+.jfx-list-view {
+    -fx-background-color: #0d3fb9;
+}
+
+.bottom-area {
+    -fx-background-color: #0d3fb9;
+    -fx-pref-height: 110px;
 }

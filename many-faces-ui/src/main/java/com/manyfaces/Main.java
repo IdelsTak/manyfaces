@@ -3,13 +3,14 @@
  */
 package com.manyfaces;
 
-import com.manyfaces.ui.Home;
+import com.manyfaces.spi.RootComponent;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import org.openide.util.Lookup;
 
 /**
 
@@ -28,12 +29,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Scene scene = new Scene(new Home().getPane());
+        Lookup globalLookup = Lookup.getDefault();
+        RootComponent rootComponent = globalLookup.lookup(RootComponent.class);
 
-        primaryStage.setOnShown(e -> maximizeFallBack(primaryStage));
-        primaryStage.setTitle("Many Faces");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        if (rootComponent != null) {
+            Scene scene = new Scene(rootComponent.getRoot());
+
+            primaryStage.setOnShown(e -> maximizeFallBack(primaryStage));
+            primaryStage.setTitle("Many Faces");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
     }
 
     /**

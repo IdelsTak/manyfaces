@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 /**
  FXML Controller class
@@ -33,7 +34,7 @@ public class NavigationBarController {
     public void initialize() {
     }
     
-    public void setHomeContentPane(Pane homeMenuContentPane) throws IOException{
+    public void setHomeContentPane(VBox homeMenuContentPane) throws IOException{
         URL location = getClass().getResource("/views/HomeMenu.fxml");
         FXMLLoader loader = new FXMLLoader(location);
         Pane homeMenuPane = loader.load();
