@@ -4,17 +4,20 @@
 package com.manyfaces.ui.controllers;
 
 import com.jfoenix.controls.JFXTextField;
+import com.manyfaces.model.Group;
+import com.manyfaces.spi.GroupsRepository;
 import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
+import javafx.application.Platform;
+import javafx.collections.ListChangeListener.Change;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.TitledPane;
+import org.openide.util.Lookup;
 
 /**
  FXML Controller class
@@ -24,10 +27,12 @@ import javafx.scene.control.TitledPane;
 public class GroupListController {
 
     private static final Logger LOG;
+    private static final Lookup LOOKUP = Lookup.getDefault();
     @FXML
     private JFXTextField searchField;
     @FXML
     private Accordion accordion;
+    private ObservableList<Group> groups;
 
     static {
         LOG = Logger.getLogger(GroupListController.class.getName());
@@ -41,13 +46,12 @@ public class GroupListController {
     @FXML
     public void initialize() throws IOException {
 
-        ObservableList<Group> groups = FXCollections.observableArrayList();
+        groups = LOOKUP.lookup(GroupsRepository.class).findAll();
 
-        groups.add(new Group("Unassigned"));
-        groups.add(new Group("test group"));
+        refreshRows();
 
-        groups.forEach(group -> {
-            accordion.getPanes().add(getGroupRow(group.groupNameProperty.get()));
+        groups.addListener((Change<? extends Group> change) -> {
+            Platform.runLater(() -> refreshRows());
         });
 
         accordion.expandedPaneProperty().addListener((ob, ov, nv) -> {
@@ -82,6 +86,15 @@ public class GroupListController {
         });
     }
 
+    private void refreshRows() {
+        accordion.getPanes().clear();
+        groups.forEach(group -> {
+            accordion.getPanes()
+                    .add(getGroupRow(group.getGroupNameProperty()
+                            .get()));
+        });
+    }
+
     private TitledPane getGroupRow(String groupName) {
         URL location = getClass().getResource("/views/GroupListRow.fxml");
         FXMLLoader loader = new FXMLLoader(location);
@@ -99,14 +112,4 @@ public class GroupListController {
 
         return titledPane;
     }
-
-    private static class Group {
-
-        private final SimpleStringProperty groupNameProperty;
-
-        private Group(String groupName) {
-            this.groupNameProperty = new SimpleStringProperty(groupName);
-        }
-    }
-
 }

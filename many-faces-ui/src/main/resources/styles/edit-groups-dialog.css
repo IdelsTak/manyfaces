@@ -80,7 +80,7 @@
     -fx-max-height: -fx-pref-height;
 }
 
-.list-area > .scroll-pane {
+.list-area > .border-pane {
     -fx-pref-width: 530px;
     -fx-pref-height: 225px;
     -fx-min-width: -fx-pref-width;
@@ -89,6 +89,60 @@
     -fx-max-height: -fx-pref-height;
     -fx-font-family: "Roboto";
     -fx-font-size: 14px;
+    -fx-border-color: #e0e2e7;
+    -fx-border-width: 1 1 1 1;
+}
+
+/* The main scrollbar **track** CSS class  */
+.jfx-list-view .scroll-bar:vertical .track {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 0em;
+}
+
+.jfx-list-view {
+    -fx-background-insets: 0;
+}
+
+.jfx-list-view .scroll-bar {
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 0 0 0 8;
+}
+
+.jfx-list-view .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 0.5em;
+}
+
+.jfx-list-view .scroll-bar:vertical .increment-button,
+.jfx-list-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 2 0 0;
+}
+
+.jfx-list-view .scroll-bar .increment-arrow,
+.jfx-list-view .scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+.jfx-list-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #e0e0e0;
+    -fx-background-insets: 1, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+.list-cell:odd, 
+.list-cell:even {
+    -fx-background-color: #f9f9f9;
+}
+
+.list-cell {
+    -fx-background-insets: 0.0;
 }
 
 .buttons-area {

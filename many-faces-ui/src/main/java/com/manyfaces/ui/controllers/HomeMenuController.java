@@ -5,12 +5,18 @@ package com.manyfaces.ui.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXListView;
+import com.manyfaces.model.Group;
+import com.manyfaces.spi.GroupsRepository;
 import com.manyfaces.spi.RootComponent;
 import com.manyfaces.ui.BrowserProfileList;
 import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
+import javafx.collections.ListChangeListener.Change;
+import javafx.collections.ObservableList;
 import javafx.css.Styleable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +24,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import org.openide.util.Lookup;
 
 /**
@@ -29,8 +34,7 @@ import org.openide.util.Lookup;
 public class HomeMenuController {
 
     private static final Logger LOG;
-    @FXML
-    private StackPane rootPane;
+    private static final Lookup LOOKUP = Lookup.getDefault();
     @FXML
     private ToggleGroup menuGroup;
     @FXML
@@ -45,7 +49,10 @@ public class HomeMenuController {
     private RadioButton helpToggle;
     @FXML
     private JFXButton groupSettingsButton;
+    @FXML
+    private JFXListView<Group> groupsList;
     private Pane contentPane;
+    private ObservableList<Group> groups;
 
     static {
         LOG = Logger.getLogger(HomeMenuController.class.getName());
@@ -72,18 +79,22 @@ public class HomeMenuController {
             }
 
             if (pane != null && controller != null) {
-                RootComponent root = Lookup.getDefault().lookup(RootComponent.class);
-
-                if (root != null) {
-                    JFXDialog dialog = new JFXDialog();
-                    dialog.setContent(pane);
-                    dialog.setTransitionType(JFXDialog.DialogTransition.BOTTOM);
-                    controller.setDialog(dialog);
-                    dialog.show(root.getRoot());
-                }
+                JFXDialog dialog = new JFXDialog();
+                dialog.setContent(pane);
+                dialog.setTransitionType(JFXDialog.DialogTransition.BOTTOM);
+                controller.setDialog(dialog);
+                dialog.show(LOOKUP.lookup(RootComponent.class).getRoot());
             }
 
         });
+
+        groups = LOOKUP.lookup(GroupsRepository.class).findAll();
+
+        groups.addListener((Change<? extends Group> change) -> {
+            Platform.runLater(() -> groupsList.getItems().setAll(groups));
+        });
+
+        groupsList.getItems().setAll(groups);
     }
 
     public void setContentPane(Pane contentPane) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane id="AnchorPane" fx:id="dialogPane" styleClass="dialog-pane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.manyfaces.ui.controllers.EditGroupsDialogController">
+<AnchorPane id="AnchorPane" fx:id="dialogPane" styleClass="dialog-pane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.EditGroupsDialogController">
    <children>
       <HBox fx:id="headerBox" styleClass="header-area" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -47,19 +47,16 @@
             </HBox>
             <VBox fx:id="groupListBox" prefHeight="200.0" prefWidth="100.0" spacing="3.0" styleClass="list-area">
                <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
-                     <content>
-                        <BorderPane prefHeight="200.0" prefWidth="200.0">
-                           <top>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="No groups found." BorderPane.alignment="CENTER">
-                                 <BorderPane.margin>
-                                    <Insets top="30.0" />
-                                 </BorderPane.margin>
-                              </Text>
-                           </top>
-                        </BorderPane>
-                     </content>
-                  </ScrollPane>
+                  <BorderPane styleClass="border-pane">
+                     <center>
+                        <StackPane BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXListView fx:id="groupsListView" />
+                              <Text fx:id="noGroupsFoundText" strokeType="OUTSIDE" strokeWidth="0.0" text="No groups found." />
+                           </children>
+                        </StackPane>
+                     </center>
+                  </BorderPane>
                   <StackPane fx:id="listActionsPane" styleClass="list-actions-area">
                      <children>
                         <JFXButton fx:id="addNewgroupButton" styleClass="add-group-button" text="Add new group" StackPane.alignment="TOP_LEFT">
