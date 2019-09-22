@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleNode?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox style="-fx-background-color: white;" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.ProfileListController">
+   <children>
+      <TitledPane fx:id="titledPane" animated="false" expanded="false" styleClass="action-pane" VBox.vgrow="NEVER">
+         <content>
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" spacing="6.0" style="-fx-background-color: transparent;">
+               <children>
+                  <JFXCheckBox fx:id="selectCheckBox" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" />
+                  <JFXButton fx:id="selectButton" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" styleClass="action-button" text="Select all" />
+                  <JFXButton fx:id="deleteButton" layoutX="103.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" styleClass="action-button" text="Delete" />
+                  <JFXButton fx:id="moveToGroupButton" layoutX="103.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" styleClass="action-button" text="Move to a group" />
+                  <JFXButton fx:id="removeFromGroupButton" layoutX="161.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" styleClass="action-button" text="Remove from a group" />
+               </children>
+               <padding>
+                  <Insets left="26.0" />
+               </padding>
+            </HBox>
+         </content>
+      </TitledPane>
+      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" VBox.vgrow="NEVER">
+         <children>
+            <JFXTextField fx:id="searchField" labelFloat="true" promptText="Search profiles...">
+               <HBox.margin>
+                  <Insets top="7.5" />
+               </HBox.margin></JFXTextField>
+            <HBox maxHeight="-Infinity" prefHeight="26.0" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS" />
+            <JFXToggleNode fx:id="settingsToggle" maxHeight="48.0" prefHeight="48.0" styleClass="action-toggle">
+               <graphic>
+                  <FontIcon fx:id="settingsIcon" iconLiteral="mdi-settings" styleClass="action-icon" />
+               </graphic>
+            </JFXToggleNode>
+            <JFXToggleNode fx:id="refreshButton" layoutX="148.0" layoutY="10.0" styleClass="action-toggle">
+               <graphic>
+                  <FontIcon fx:id="refreshIcon" disable="true" iconLiteral="mdi-cached" styleClass="action-icon" />
+               </graphic>
+            </JFXToggleNode>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="26.0" right="32.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <VBox VBox.vgrow="ALWAYS">
+         <children>
+            <HBox styleClass="columns-box" VBox.vgrow="NEVER">
+               <children>
+                  <JFXButton contentDisplay="RIGHT" styleClass="sort-button" text="Name">
+                     <graphic>
+                        <FontIcon fx:id="nameSortIcon" iconLiteral="mdi-play" styleClass="sort-icon" />
+                     </graphic>
+                     <padding>
+                        <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                     </padding>
+                  </JFXButton>
+                  <HBox maxHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="225.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton contentDisplay="RIGHT" layoutX="11.0" layoutY="11.0" styleClass="sort-button" text="Status">
+                     <padding>
+                        <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                     </padding>
+                  </JFXButton>
+                  <HBox layoutX="58.0" layoutY="11.0" maxHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="30.0" />
+                  <JFXButton contentDisplay="RIGHT" layoutX="11.0" layoutY="11.0" styleClass="sort-button" text="Members">
+                     <graphic>
+                        <FontIcon fx:id="nameSortIcon1" iconLiteral="mdi-play" styleClass="sort-icon" />
+                     </graphic>
+                     <padding>
+                        <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                     </padding>
+                  </JFXButton>
+                  <HBox layoutX="315.0" layoutY="11.0" maxHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="32.0" />
+                  <JFXButton contentDisplay="RIGHT" layoutX="345.0" layoutY="11.0" styleClass="sort-button" text="Last edited">
+                     <graphic>
+                        <FontIcon fx:id="nameSortIcon11" iconLiteral="mdi-play" styleClass="sort-icon" />
+                     </graphic>
+                     <padding>
+                        <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                     </padding>
+                  </JFXButton>
+                  <HBox layoutX="411.0" layoutY="11.0" maxHeight="-Infinity" minWidth="-Infinity" prefHeight="13.0" prefWidth="170.0" />
+               </children>
+               <padding>
+                  <Insets bottom="6.0" />
+               </padding>
+            </HBox>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="500.0" style="-fx-background-color: white;" VBox.vgrow="NEVER">
+               <content>
+                  <Accordion fx:id="accordion" style="-fx-background-color: white;" />
+               </content>
+            </ScrollPane>
+            <Separator orientation="VERTICAL" prefHeight="6.0" visible="false" VBox.vgrow="NEVER" />
+         </children>
+         <padding>
+            <Insets left="26.0" right="32.0" />
+         </padding>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/roboto-regular.css" />
+      <URL value="@../styles/profile-list.css" />
+   </stylesheets>
+</VBox>
