@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXToggleNode?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<TitledPane fx:id="titledPane" animated="false" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="645.0" styleClass="profile-pane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.ProfilePaneController">
+   <content>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="645.0" styleClass="grid-pane">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="10.0" />
+          <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="88.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" vgrow="NEVER" />
+          <RowConstraints minHeight="10.0" vgrow="NEVER" />
+          <RowConstraints minHeight="10.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Label styleClass="edit-label" text="Profile ID">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </Label>
+            <Text fx:id="profileIdText" strokeType="OUTSIDE" strokeWidth="0.0" text="bcb1f5f6-3b20-4136-8a14-c7bf9418bef8" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" />
+            <Label styleClass="edit-label" text="Notes" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets right="20.0" top="30.0" />
+               </GridPane.margin></Label>
+            <JFXTextArea prefHeight="80.0" prefWidth="475.0" promptText="Add notes..." GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="20.0" top="30.0" />
+               </GridPane.margin>
+            </JFXTextArea>
+            <JFXButton minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #1c54d3;" styleClass="edit-button" text="Save note" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <JFXButton styleClass="edit-button" text="Cancel editing" textFill="#2858cd" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="40.0" top="25.0" />
+         </padding>
+      </GridPane>
+   </content>
+   <graphic>
+      <HBox fx:id="titleHbox" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="48.0" prefWidth="645.0" spacing="2.0" styleClass="title-box">
+         <children>
+            <JFXCheckBox fx:id="titlePaneCheckBox" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="49.0" />
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+               <image>
+                  <Image url="@../images/fox.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="12.5" top="12.5" />
+               </HBox.margin>
+            </ImageView>
+            <JFXToggleNode fx:id="expandPaneToggle" maxHeight="-Infinity" minHeight="-Infinity" prefWidth="12.0">
+               <graphic>
+                  <FontIcon iconLiteral="mdi-play" />
+               </graphic>
+               <padding>
+                  <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="16.5" top="16.5" />
+               </HBox.margin>
+            </JFXToggleNode>
+            <Label fx:id="profileNameLabel" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="49.0" styleClass="title-label" />
+            <HBox prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <Label fx:id="lastEditedLabel" prefHeight="24.0" prefWidth="65.0" style="-fx-font-size: 12px;" text="01/08/2018">
+               <HBox.margin>
+                  <Insets top="12.0" />
+               </HBox.margin>
+            </Label>
+            <HBox fx:id="notificationsBox" layoutX="143.0" layoutY="10.0" prefWidth="65.0" />
+            <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #60c652; -fx-text-fill: white;" text="Update">
+               <HBox.margin>
+                  <Insets bottom="11.5" top="11.5" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="menuButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 24;" styleClass="menu-button">
+               <graphic>
+                  <FontIcon fx:id="menuIcon" iconLiteral="mdi-dots-vertical" iconSize="24" styleClass="menu-icon" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+   </graphic>
+   <stylesheets>
+      <URL value="@../styles/roboto-regular.css" />
+      <URL value="@../styles/profile-pane.css" />
+   </stylesheets>
+</TitledPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.AccountPreferencesTabController">
+   <children>
+      <JFXTabPane fx:id="tabPane" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab fx:id="accountTab" closable="false" text="My account" />
+            <Tab fx:id="preferencesTab" closable="false" text="Preferences" />
+         </tabs>
+         <stylesheets>
+            <URL value="@../styles/roboto-regular.css" />
+            <URL value="@../styles/roboto-bold.css" />
+            <URL value="@../styles/profile-list-tab.css" />
+         </stylesheets>
+      </JFXTabPane>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/roboto-regular.css" />
+      <URL value="@../styles/roboto-bold.css" />
+      <URL value="@../styles/account-preferences-tab.css" />
+   </stylesheets>
+</AnchorPane>
