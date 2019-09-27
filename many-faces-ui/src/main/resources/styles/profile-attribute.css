@@ -1,0 +1,72 @@
+
+.profile-attribute-root {
+    -fx-background-color: white;
+    -fx-font-family: "Roboto";
+}
+
+.page-header-border {
+    -fx-border-color: transparent transparent #e0e2e7 transparent;
+}
+
+.profile-buttons-box {
+    -fx-pref-width: 326px;
+    -fx-min-width: -fx-pref-width;
+    -fx-max-width: -fx-pref-width;
+    -fx-pref-height: 80px;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -fx-spacing: 5px;
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent transparent #e0e2e7;
+}
+
+.cancel-update-profile-button,
+.update-profile-button {
+    -fx-pref-height: 37px;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.cancel-update-profile-button {
+    -fx-background-color: #fbfbfb;
+    -fx-border-color: #c2c6cf;
+    -fx-text-fill: #828b93;
+}
+
+.update-profile-button {
+    -fx-background-color: #d7e4ff;
+    -fx-border-color: #b9c9ef;
+    -fx-text-fill: #0e46cc;
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 2;
+}
+
+.scroll-pane {
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .increment-button,
+.scroll-pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 10 0 0;
+}
+
+.scroll-pane .scroll-bar .increment-arrow,
+.scroll-pane .scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #e5e5e5;
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2;
+}

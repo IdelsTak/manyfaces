@@ -1,0 +1,19 @@
+
+.profile-summary-root {
+    -fx-font-family: "Roboto";
+    -fx-background-color: #f9f9f9;
+    -fx-pref-width: 315px;
+    -fx-min-width: -fx-pref-width;
+    -fx-max-width: -fx-pref-width;
+}
+
+.summary-box {
+    -fx-padding: 26 0 0 17;
+    -fx-spacing: 16px;
+    -fx-border-color: transparent transparent transparent #e0e2e7;
+}
+
+#mainLabel {
+    -fx-font-size: 15px;
+    -fx-text-fill: #174bc9;
+}

@@ -1,0 +1,15 @@
+
+.profile-actions-popup-root {
+    -fx-background-color: white;
+    -fx-font-family: "Roboto";
+}
+
+.action-button {
+    -fx-font-size: 14px;
+    -fx-padding: 0;
+    /*-fx-background-color: #f5f5f5;*/
+}
+
+/*.action-button .jfx-rippler {
+    -jfx-rippler-fill: #dcdcdc;
+}*/
