@@ -1,0 +1,15 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.root {
+    -fx-font-family: "Roboto";
+}
+
+.check-box, .button, .toogle-button {
+    -fx-padding: 0;
+}
+
+.toggle-button:selected {
+    -fx-rotate: 90;
+}

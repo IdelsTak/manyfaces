@@ -1,0 +1,115 @@
+
+
+.profile-menu-root {
+    -fx-background-color: #0d3fb9;
+    -fx-font-family: "Roboto";
+    -fx-pref-width: 242px;
+    -fx-min-width: -fx-pref-width;
+    -fx-max-width: -fx-pref-width;
+}
+
+.title-area {
+    -fx-pref-height: 140px;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -fx-padding: 32 0 28 27;
+}
+
+.title-area > .home-button {
+    -fx-padding: 0 1 0 0;
+    -fx-pref-width: 28px;
+    -fx-pref-height: -fx-pref-width;
+    -fx-min-width: -fx-pref-width;
+    -fx-min-height: -fx-pref-width;
+    -fx-max-width: -fx-pref-width;
+    -fx-max-height: -fx-pref-width;
+    -fx-background-radius: 14px;
+    -fx-cursor: hand;
+}
+
+.title-area > .home-button .jfx-rippler {
+    -jfx-rippler-fill: #0d3fb9;
+}
+
+.title-area > .home-button > .home-icon {
+    -fx-icon-color: white;
+    -fx-icon-code: mdi-home;
+    -fx-icon-size: 28px;
+}
+
+.title-area > .title-label {
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
+
+.main-menu-area {
+    -fx-pref-height: 180px;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -fx-padding: 0 0 38 27;
+}
+
+.advanced-menu-area,
+.main-menu-area {
+    -fx-font-size: 16px;
+    -fx-spacing: 16px;
+}
+
+.advanced-menu-toggle,
+.menu-toggle {
+    -fx-text-fill: #a7d0ff;
+    -fx-label-padding: 0;
+    -fx-cursor: hand;
+}
+
+.menu-toggle:selected {
+    -fx-text-fill: white;
+}
+
+/*Remove radio-button's styling*/
+.advanced-menu-toggle > .radio,
+.menu-toggle > .radio {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0px;
+    -fx-padding: 0.0em;
+}
+
+.advanced-menu-toggle > .radio > .dot,
+.menu-toggle > .radio > .dot {
+    -fx-background-color: transparent;
+    /*This is important!*/
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}
+
+.advanced-menu-toggle:selected > .radio > .dot,
+.menu-toggle:selected > .radio > .dot {
+    -fx-background-color: transparent;
+}
+
+.advanced-menu-pane > .title {
+    -fx-font-size: 16px;
+    -fx-pref-height: 20px;
+    -fx-min-height: 20px;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 27;
+}
+
+.advanced-menu-pane > .title > .arrow-button {
+    -fx-padding: 0;
+}
+
+.advanced-menu-pane > .title > .arrow-button > .arrow {
+    -fx-background-color: null;
+    -fx-padding: 0;
+}
+
+.advanced-menu-pane > *.content {
+    -fx-border-color: null;
+    -fx-border-insets: 0;
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 33;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToggleNode?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane styleClass="page-header" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.PageHeaderController">
+    <left>
+        <Text fx:id="headerText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-header-text" text="&lt;headerg text&gt;" BorderPane.alignment="CENTER" />
+    </left>
+    <right>
+        <JFXToggleNode fx:id="notificationToggle" styleClass="toggle-node" BorderPane.alignment="CENTER">
+            <graphic>
+                <FontIcon fx:id="icon" disable="true" iconLiteral="mdi-bell" styleClass="icon" />
+            </graphic>
+        </JFXToggleNode>
+    </right>
+   <stylesheets>
+      <URL value="@../styles/roboto-regular.css" />
+      <URL value="@../styles/page-header.css" />
+   </stylesheets>
+</BorderPane>

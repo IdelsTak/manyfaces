@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" styleClass="profile-attribute-root" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.ProfileAttributeController">
+    <children>
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <BorderPane maxWidth="1.7976931348623157E308">
+                <left>
+                    <Text fx:id="headerText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-header-text" text="&lt;headerg text&gt;" BorderPane.alignment="CENTER" />
+                </left>
+               <stylesheets>
+                  <URL value="@../styles/roboto-regular.css" />
+                  <URL value="@../styles/page-header.css" />
+               </stylesheets>
+               <styleClass>
+                  <String fx:value="page-header" />
+                  <String fx:value="page-header-border" />
+               </styleClass>
+            </BorderPane>
+                <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pannable="true" style="-fx-border-width: 0; -fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                    <content>
+                        <HBox>
+                            <children>
+                                <AnchorPane fx:id="attributeContentPane" style="-fx-background-color: white;" HBox.hgrow="ALWAYS" />
+                                <VBox fx:id="summaryBox" HBox.hgrow="NEVER">
+                                    <children>
+                                        <Label fx:id="mainLabel" text="PROFILE SUMMARY">
+                                 <VBox.margin>
+                                    <Insets left="17.0" />
+                                 </VBox.margin></Label>
+                                        <GridPane hgap="16.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="24.0" vgrow="NEVER" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Profile name:" />
+                                                <Label fx:id="profileNameLabel" disable="true" text="&lt;name&gt;" GridPane.columnIndex="1" />
+                                                <Label text="Proxy:" GridPane.rowIndex="1" />
+                                                <Label fx:id="proxyLabel" disable="true" text="&lt;proxy&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Browser:" GridPane.rowIndex="2" />
+                                                <Label fx:id="browserLabel" disable="true" text="&lt;browser&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Label text="OS:" GridPane.rowIndex="3" />
+                                                <Label fx:id="osLabel" disable="true" text="&lt;os&gt;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label text="User-Agent:" GridPane.rowIndex="4" />
+                                                <Label fx:id="userAgentLabel" disable="true" text="&lt;user-agent&gt;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Resolution:" GridPane.rowIndex="5" />
+                                                <Label fx:id="resolutionLabel" disable="true" text="&lt;resolution&gt;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <Label text="Languages:" GridPane.rowIndex="6" />
+                                                <Label fx:id="languagesLabel" disable="true" text="&lt;languages&gt;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <Label text="Platform:" GridPane.rowIndex="7" />
+                                                <Label fx:id="platformLabel" disable="true" text="&lt;platform&gt;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <Label text="Timezone:" GridPane.rowIndex="8" />
+                                                <Label fx:id="timezoneLabel" disable="true" text="&lt;timezone&gt;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                <Label text="Geolocation:" GridPane.rowIndex="9" />
+                                                <Label fx:id="geoLocationLabel" disable="true" text="&lt;geolocation&gt;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                <Label text="WebRTC:" GridPane.rowIndex="10" />
+                                                <Label fx:id="webRtcLabel" disable="true" text="&lt;webrtc&gt;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                                <Label text="Canvas:" GridPane.rowIndex="11" />
+                                                <Label fx:id="canvasLabel" disable="true" text="&lt;canvas&gt;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                                                <Label text="WebGL metadata:" GridPane.rowIndex="12" />
+                                                <Label fx:id="webGlMetadataLabel" disable="true" text="&lt;webgl metadata&gt;" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                                                <Label text="WebGL image:" GridPane.rowIndex="13" />
+                                                <Label fx:id="webGlImageLabel" disable="true" text="&lt;webgl image&gt;" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                                                <Label text="AudioContext:" GridPane.rowIndex="14" />
+                                                <Label fx:id="audioContextLabel" disable="true" text="&lt;audiocontext&gt;" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                                                <Label text="Fonts:" GridPane.rowIndex="15" />
+                                                <Label fx:id="fontsLabel" disable="true" text="&lt;fonts&gt;" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                                                <Label text="Media devices:" GridPane.rowIndex="16" />
+                                                <Label fx:id="mediaDevicesLabel" disable="true" text="&lt;media devices&gt;" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                                                <Label text="Local Storage:" GridPane.rowIndex="17" />
+                                                <Label fx:id="localStorageLabel" disable="true" text="&lt;local storage&gt;" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                                                <Label text="Ext. storage:" GridPane.rowIndex="18" />
+                                                <Label fx:id="externalStorageLabel" disable="true" text="&lt;ext storage&gt;" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                                                <Label text="Plugins:" GridPane.rowIndex="19" />
+                                                <Label fx:id="pluginsLabel" disable="true" text="&lt;plugins&gt;" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                                                <Label text="Flash:" GridPane.rowIndex="20" />
+                                                <Label fx:id="flashLabel" disable="true" text="&lt;flash&gt;" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+                                            </children>
+                                 <VBox.margin>
+                                    <Insets left="17.0" />
+                                 </VBox.margin>
+                                        </GridPane>
+                              <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="profile-buttons-box" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <HBox HBox.hgrow="ALWAYS" />
+                                    <JFXButton fx:id="cancelButton" styleClass="cancel-update-profile-button" text="Cancel" />
+                                          <JFXButton fx:id="updateButton" styleClass="update-profile-button" text="Update profile" />
+                                    <HBox layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="22.0" top="20.0" />
+                                 </padding>
+                              </HBox>
+                                    </children>
+                           <styleClass>
+                              <String fx:value="profile-summary-root" />
+                              <String fx:value="summary-box" />
+                           </styleClass>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </children>
+   <stylesheets>
+      <URL value="@../styles/roboto-regular.css" />
+      <URL value="@../styles/roboto-bold.css" />
+      <URL value="@../styles/profile-attribute.css" />
+      <URL value="@../styles/profile-summary.css" />
+   </stylesheets>
+</AnchorPane>

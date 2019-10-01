@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" styleClass="profile-summary-root" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.ProfileSummaryController">
+   <stylesheets>
+      <URL value="@../styles/roboto-regular.css" />
+      <URL value="@../styles/profile-summary.css" />
+   </stylesheets>
+   <children>
+      <VBox fx:id="mainBox" styleClass="summary-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="mainLabel" text="PROFILE SUMMARY" />
+            <GridPane hgap="17.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <Label text="Profile name:" />
+                  <Label fx:id="profileNameLabel" text="&lt;name&gt;" GridPane.columnIndex="1" />
+                  <Label text="Proxy:" GridPane.rowIndex="1" />
+                  <Label fx:id="proxyLabel" text="&lt;proxy&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Browser:" GridPane.rowIndex="2" />
+                  <Label fx:id="browserLabel" text="&lt;browser&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="OS:" GridPane.rowIndex="3" />
+                  <Label fx:id="osLabel" text="&lt;os&gt;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="User-Agent:" GridPane.rowIndex="4" />
+                  <Label fx:id="userAgentLabel" text="&lt;user-agent&gt;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label text="Resolution:" GridPane.rowIndex="5" />
+                  <Label fx:id="resolutionLabel" text="&lt;resolution&gt;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="Languages:" GridPane.rowIndex="6" />
+                  <Label fx:id="languagesLabel" text="&lt;languages&gt;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Platform:" GridPane.rowIndex="7" />
+                  <Label fx:id="platformLabel" text="&lt;platform&gt;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="Timezone:" GridPane.rowIndex="8" />
+                  <Label fx:id="timezoneLabel" text="&lt;timezone&gt;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <Label text="Geolocation:" GridPane.rowIndex="9" />
+                  <Label fx:id="geoLocationLabel" text="&lt;geolocation&gt;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label text="WebRTC:" GridPane.rowIndex="10" />
+                  <Label fx:id="webRtcLabel" text="&lt;webrtc&gt;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <Label text="Canvas:" GridPane.rowIndex="11" />
+                  <Label fx:id="canvasLabel" text="&lt;canvas&gt;" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Label text="WebGL metadata:" GridPane.rowIndex="12" />
+                  <Label fx:id="webGlMetadataLabel" text="&lt;webgl metadata&gt;" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <Label text="WebGL image:" GridPane.rowIndex="13" />
+                  <Label fx:id="webGlImageLabel" text="&lt;webgl image&gt;" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <Label text="AudioContext:" GridPane.rowIndex="14" />
+                  <Label fx:id="audioContextLabel" text="&lt;audiocontext&gt;" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <Label text="Fonts:" GridPane.rowIndex="15" />
+                  <Label fx:id="fontsLabel" text="&lt;fonts&gt;" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <Label text="Media devices:" GridPane.rowIndex="16" />
+                  <Label fx:id="mediaDevicesLabel" text="&lt;media devices&gt;" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                  <Label text="Local Storage:" GridPane.rowIndex="17" />
+                  <Label fx:id="localStorageLabel" text="&lt;local storage&gt;" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                  <Label text="Ext. storage:" GridPane.rowIndex="18" />
+                  <Label fx:id="externalStorageLabel" text="&lt;ext storage&gt;" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+                  <Label text="Plugins:" GridPane.rowIndex="19" />
+                  <Label fx:id="pluginsLabel" text="&lt;plugins&gt;" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+                  <Label text="Flash:" GridPane.rowIndex="20" />
+                  <Label fx:id="flashLabel" text="&lt;flash&gt;" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
