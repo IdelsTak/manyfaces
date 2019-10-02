@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXToggleButton?>
-<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
@@ -21,7 +16,7 @@
       <URL value="@../styles/profile-webrtc.css" />
    </stylesheets>
    <children>
-      <VBox styleClass="profile-webrtc-content" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="18.0">
+      <VBox fx:id="contentBox" styleClass="profile-webrtc-content" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="18.0">
          <children>
             <Label text="Behavior:" />
             <HBox fx:id="buttonsBox" styleClass="buttons-area">
@@ -39,83 +34,7 @@
                   <Insets top="7.0" />
                </VBox.margin>
             </HBox>
-            <BorderPane fx:id="behaviorAlertPane">
-               <VBox.margin>
-                  <Insets bottom="23.0" top="9.0" />
-               </VBox.margin>
-            </BorderPane>
-            <VBox fx:id="ipSettingsBox">
-               <children>
-                  <VBox fx:id="publicIPBox" styleClass="public-ip-box">
-                     <children>
-                        <Label styleClass="header-label" text="Public IP">
-                           <VBox.margin>
-                              <Insets top="33.0" />
-                           </VBox.margin>
-                        </Label>
-                        <JFXToggleButton fx:id="fillIPToggle" text="Fill WebRTC Public IP based on the IP.">
-                           <VBox.margin>
-                              <Insets top="9.0" />
-                           </VBox.margin>
-                        </JFXToggleButton>
-                        <Label maxWidth="1.7976931348623157E308" text="Fill WebRTC Public IP on browser profile start based on the external IP." wrapText="true">
-                           <styleClass>
-                              <String fx:value="field-header-label" />
-                              <String fx:value="public-ip-header-label" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets top="9.0" />
-                           </VBox.margin>
-                        </Label>
-                        <JFXTextField fx:id="fillIPField">
-                           <VBox.margin>
-                              <Insets bottom="48.0" />
-                           </VBox.margin>
-                        </JFXTextField>
-                     </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </VBox>
-                  <VBox fx:id="localIpsBox">
-                     <children>
-                        <Label fx:id="headerLabel" styleClass="header-label" text="Local IP(s)">
-                           <VBox.margin>
-                              <Insets bottom="9.0" top="33.0" />
-                           </VBox.margin>
-                        </Label>
-                        <JFXToggleButton fx:id="enableMaskingToggle" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" text="Enable Local IP masking">
-                           <VBox.margin>
-                              <Insets bottom="9.0" />
-                           </VBox.margin>
-                        </JFXToggleButton>
-                     </children>
-                  </VBox>
-                  <VBox fx:id="otherIpsBox">
-                     <children>
-                        <VBox styleClass="ip-details-box">
-                           <children>
-                              <Label styleClass="field-header-label" text="Local IP 1">
-                                 <VBox.margin>
-                                    <Insets bottom="6.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <JFXTextField fx:id="ip1Field" />
-                           </children>
-                           <VBox.margin>
-                              <Insets bottom="39.0" />
-                           </VBox.margin>
-                        </VBox>
-                        <VBox fx:id="extraIpsBox" />
-                        <VBox fx:id="hyperlinkBox" maxWidth="1.7976931348623157E308">
-                           <children>
-                              <Hyperlink fx:id="addIpHyperlink" maxHeight="1.7976931348623157E308" text="Add new local IP" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
+            <VBox fx:id="settingsPane" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </children>
