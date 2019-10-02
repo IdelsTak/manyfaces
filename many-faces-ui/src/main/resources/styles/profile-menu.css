@@ -2,7 +2,7 @@
 
 .profile-menu-root {
     -fx-background-color: #0d3fb9;
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-pref-width: 242px;
     -fx-min-width: -fx-pref-width;
     -fx-max-width: -fx-pref-width;

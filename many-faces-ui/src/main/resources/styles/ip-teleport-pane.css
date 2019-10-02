@@ -1,6 +1,6 @@
 
 .teleport-pane-root {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-pref-width: 645px;
     -fx-pref-height: 292px;
     -fx-min-width: -fx-pref-width;

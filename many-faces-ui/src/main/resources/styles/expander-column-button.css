@@ -3,7 +3,7 @@
  */
 
 .root {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
 }
 
 .check-box, .button, .toogle-button {

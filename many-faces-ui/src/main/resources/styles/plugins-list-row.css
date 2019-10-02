@@ -1,7 +1,7 @@
 
 .titled-pane, 
 .title-box {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-background-color: white;
 }
 

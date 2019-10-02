@@ -1,6 +1,6 @@
 
 .jfx-text-field {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-font-size: 14px;
     -fx-prompt-text-fill: #7b7b7b;
     -fx-border-color: #949494;

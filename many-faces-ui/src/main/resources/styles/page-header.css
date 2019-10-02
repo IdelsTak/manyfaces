@@ -28,7 +28,7 @@
 }
 
 .page-header-text {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-font-size: 19px;
     -fx-fill: #b4bbc2;
 }

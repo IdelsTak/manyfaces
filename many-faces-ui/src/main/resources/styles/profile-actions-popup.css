@@ -1,7 +1,7 @@
 
 .profile-actions-popup-root {
     -fx-background-color: white;
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
 }
 
 .action-button {

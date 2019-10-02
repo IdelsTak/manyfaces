@@ -31,7 +31,7 @@ only the collapsible pane remains*/
 }
 
 .jfx-text-field {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-font-size: 14px;
     -fx-prompt-text-fill: #7b7b7b;
     -fx-border-color: #949494;
@@ -84,7 +84,7 @@ only the collapsible pane remains*/
 }
 
 .jfx-check-box, .action-button {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-font-size: 14px;
     -fx-text-fill: #174bc9;
     -jfx-checked-color: #174bc9;
@@ -135,7 +135,7 @@ only the collapsible pane remains*/
 
 
 /*.table-view {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     For testing purposes
     -fx-border-color: blueviolet;
 }

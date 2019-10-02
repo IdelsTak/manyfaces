@@ -1,7 +1,7 @@
 
 .parameters-dialog-root {
     -fx-background-color: white;
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-pref-width: 598px;
     -fx-pref-height: 501px;
     -fx-min-width: -fx-pref-width;
@@ -18,7 +18,7 @@
 }
 
 .header-area > .label {
-    -fx-font-family: "Roboto";
+    -fx-font-family: 'Roboto';
     -fx-font-size: 18px;
     -fx-text-fill: white;
 }

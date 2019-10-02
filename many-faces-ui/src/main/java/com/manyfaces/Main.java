@@ -4,10 +4,12 @@
 package com.manyfaces;
 
 import com.manyfaces.spi.RootComponent;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.openide.util.Lookup;
@@ -29,6 +31,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        
+        loadRobotoFonts();
+        
         Lookup globalLookup = Lookup.getDefault();
         RootComponent rootComponent = globalLookup.lookup(RootComponent.class);
 
@@ -56,6 +61,15 @@ public class Main extends Application {
         stage.setY(bounds.getMinY());
         stage.setWidth(bounds.getWidth());
         stage.setHeight(bounds.getHeight());
+    }
+
+    private void loadRobotoFonts() {
+        Font roboto = Font.loadFont(getClass().getResourceAsStream("/fonts/roboto/Roboto-Regular.ttf"), 13);
+        Font robotoItalic = Font.loadFont(getClass().getResourceAsStream("/fonts/roboto/Roboto-Italic.ttf"), 13);
+        Font robotoBold = Font.loadFont(getClass().getResourceAsStream("/fonts/roboto/Roboto-Bold.ttf"), 13);
+        
+        LOG.log(Level.INFO, "roboto: {0}; italic: {1}; bold: {2}", 
+                new Object[]{roboto, robotoItalic, robotoBold});
     }
 
 }
