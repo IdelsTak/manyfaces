@@ -14,6 +14,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -25,6 +26,9 @@ import javafx.scene.layout.VBox;
 public class ProfileWebRtcRealController {
 
     private static final Logger LOG;
+
+    @FXML
+    private AnchorPane rootPane;
     @FXML
     private JFXToggleButton enableMaskingToggle;
     @FXML
@@ -56,7 +60,11 @@ public class ProfileWebRtcRealController {
         ipsBox.visibleProperty().bind(enableMaskingToggle.selectedProperty());
 
         addIpHyperlink.setOnAction(e -> {
-            extraIpsBox.getChildren().add(getExtraIpPane());
+            Pane extraIpPane = getExtraIpPane();
+
+            addHeightToRoot(extraIpPane.getPrefHeight());
+            extraIpsBox.getChildren().add(extraIpPane);
+
             ipPanesCount += 1;
             ipPanesCountProperty.set(ipPanesCount);
         });
@@ -64,6 +72,10 @@ public class ProfileWebRtcRealController {
         ipPanesCountProperty.addListener((o, ov, nv) -> {
             ipPanesCount = nv.intValue();
         });
+    }
+
+    private void addHeightToRoot(double height) {
+        rootPane.setMinHeight(rootPane.getHeight() + height);
     }
 
     private Pane getExtraIpPane() {

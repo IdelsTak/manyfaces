@@ -3,11 +3,8 @@
     -fx-background-color: white;
     -fx-font-family: 'Roboto';
     -fx-pref-width: 335px;
-    -fx-min-width: -fx-pref-width;
-}
-
-.ip-details-box {
     -fx-pref-height: 78px;
+    -fx-min-width: -fx-pref-width;
     -fx-min-height: -fx-pref-height;
     -fx-max-height: -fx-pref-height;
 }

@@ -11,6 +11,14 @@
 
 .field-header-label {
     -fx-font-size: 12px;
+}
+
+.hash-label {
+    -fx-font-size: 14px;
+}
+
+.field-header-label,
+.hash-label {
     -fx-pref-height: 21px;
     -fx-min-height: -fx-pref-height;
     -fx-alignment: top-left;

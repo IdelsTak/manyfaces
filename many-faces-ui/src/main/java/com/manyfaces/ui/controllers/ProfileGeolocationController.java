@@ -65,7 +65,6 @@ public class ProfileGeolocationController {
                         + "geolocation from the browser profile configuration "
                         + "will be provided to a website.",
                         Style.INFO);
-                alertPane.setMinHeight(145.0);
                 behaviorAlertPane.setCenter(alertPane);
             }
         });
@@ -77,7 +76,6 @@ public class ProfileGeolocationController {
                         + "honored. A website will receive geolocation "
                         + "coordinates configured in the browser profile.",
                         Style.WARNING);
-                alertPane.setMinHeight(105.0);
                 behaviorAlertPane.setCenter(alertPane);
             }
         });
@@ -87,7 +85,6 @@ public class ProfileGeolocationController {
                 Pane alertPane = getAlertPane("Websites will always be denied "
                         + "from receiveing your geolocaion coordintes.",
                         Style.WARNING);
-                alertPane.setMinHeight(65.0);
                 behaviorAlertPane.setCenter(alertPane);
             }
         });

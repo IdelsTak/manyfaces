@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" styleClass="advanced-hardware-root" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.ProfileAdvancedHardwareController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" styleClass="advanced-hardware-root" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.manyfaces.ui.controllers.ProfileAdvancedHardwareController">
    <stylesheets>
       <URL value="@../styles/roboto-regular.css" />
       <URL value="@../styles/roboto-bold.css" />
@@ -45,7 +45,7 @@
                      </VBox.margin>
                   </BorderPane>
                   <Label styleClass="field-header-label" text="Canvas hash:" />
-                  <Label fx:id="canvasHashLabel" styleClass="field-header-label" text="hsjkskskak3k3khhddkdkdoklalalala999s9323k3k3kxd" />
+                  <Label fx:id="canvasHashLabel" styleClass="hash-label" text="&lt;hash&gt;" />
                </children>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" styleClass="audio-context-box">
@@ -75,7 +75,7 @@
                      </VBox.margin>
                   </BorderPane>
                   <Label styleClass="field-header-label" text="Audio hash:" />
-                  <Label fx:id="audioContextHashLabel" styleClass="field-header-label" text="hsjkskskak3k3khhddkdkdoklalalala999s9323k3k3kxd">
+                  <Label fx:id="audioContextHashLabel" styleClass="hash-label" text="&lt;hash&gt;">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -136,7 +136,7 @@
                      </VBox.margin>
                   </BorderPane>
                   <Label styleClass="field-header-label" text="WebGL image hash:" />
-                  <Label fx:id="webGLMetadataHashLabel" styleClass="field-header-label" text="hsjkskskak3k3khhddkdkdoklalalala999s9323k3k3kxd" />
+                  <Label fx:id="webGLMetadataHashLabel" styleClass="hash-label" text="&lt;hash&gt;" />
                </children>
             </VBox>
             <VBox fx:id="otherParametersBox">

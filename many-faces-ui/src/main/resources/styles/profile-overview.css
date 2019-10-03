@@ -6,11 +6,11 @@
 
 .jfx-text-field {
     -fx-border-color: #949494;
-    -fx-border-width: 1 1 1 1;
-    -fx-pref-width: 328px;
-    -fx-pref-height: 27px;
-    -fx-padding: 0 0 0 1;
-    -fx-font-size: 15px;
+    -fx-pref-width: 357px;
+    -fx-max-width: -fx-pref-width;
+    -fx-min-width: -fx-pref-width;
+    -fx-padding: 1.7 0 4.7 0;
+    -fx-font-size: 14px;
 }
 
 .jfx-text-field:focused {
@@ -79,6 +79,8 @@
 
 .timezone-webrtc-geolocation-overview-area > .timezone-webrtc-geolocation-overview-box {
     -fx-border-color: transparent transparent #e0e2e7 transparent;
+    -fx-pref-width: 327px;
+    -fx-min-width: -fx-pref-width;
 }
 
 .header-label {

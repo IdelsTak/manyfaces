@@ -85,7 +85,6 @@ public class ProfileAdvancedHardwareController {
                         + "browser profile on different hardware the resulting "
                         + "canvas fingerprint may differ. This option is most "
                         + "popular for web scraping.", Style.INFO);
-                alertPane.setMinHeight(115.0);
                 canvasAlertPane.setCenter(alertPane);
             }
         });
@@ -93,7 +92,6 @@ public class ProfileAdvancedHardwareController {
             if (canvasOffToggle.isSelected()) {
                 Pane alertPane = getAlertPane("Don't mask Canvas. "
                         + "Suitable for most users.", Style.INFO);
-                alertPane.setMinHeight(60.0);
                 canvasAlertPane.setCenter(alertPane);
             }
         });
@@ -103,7 +101,6 @@ public class ProfileAdvancedHardwareController {
                         + "reading Canvas "
                         + "fingerprint. This is a legacy mode and it's not "
                         + "advised to use.", Style.WARNING);
-                alertPane.setMinHeight(60.0);
                 canvasAlertPane.setCenter(alertPane);
             }
         });
@@ -119,7 +116,6 @@ public class ProfileAdvancedHardwareController {
                         + "you launch the same browser profile on different "
                         + "hardware the resulting canvas fingerprint may differ.",
                         Style.INFO);
-                alertPane.setMinHeight(100.0);
                 audioContextAlertPane.setCenter(alertPane);
             }
         });
@@ -128,7 +124,6 @@ public class ProfileAdvancedHardwareController {
             if (audioContextOffToggle.isSelected()) {
                 Pane alertPane = getAlertPane("Don't mask AudioContext. "
                         + "Suitable for most users.", Style.INFO);
-                alertPane.setMinHeight(60.0);
                 audioContextAlertPane.setCenter(alertPane);
             }
         });
@@ -142,7 +137,6 @@ public class ProfileAdvancedHardwareController {
                     + "applying a unique and persistent noise. There's no "
                     + "confirmed information about web sites actually utilizing "
                     + "this parameter for browser fingerprinting.", Style.INFO);
-            alertPane.setMinHeight(100.0);
             webGLImageAlertPane.setCenter(alertPane);
         });
 
@@ -150,7 +144,6 @@ public class ProfileAdvancedHardwareController {
             Pane alertPane = getAlertPane("Don't mask WebGL Image. There's no "
                     + "confirmed information about web sites actually utilizing "
                     + "this parameter for browser fingerprinting.", Style.INFO);
-            alertPane.setMinHeight(80.0);
             webGLImageAlertPane.setCenter(alertPane);
         });
 
@@ -158,7 +151,6 @@ public class ProfileAdvancedHardwareController {
             Pane alertPane = getAlertPane("Replace WebGL metadata with "
                     + "alternative suitable values. Recommended for most use "
                     + "cases.", Style.INFO);
-            alertPane.setMinHeight(70.0);
             webGLMetadataAlertPane.setCenter(alertPane);
         });
         
@@ -168,7 +160,6 @@ public class ProfileAdvancedHardwareController {
             Pane alertPane = getAlertPane("Don't mask WebGL Metadata. Websites "
                     + "will see real WebGL parameters of your computer.",
                     Style.WARNING);
-            alertPane.setMinHeight(60.0);
             webGLMetadataAlertPane.setCenter(alertPane);
         });
 

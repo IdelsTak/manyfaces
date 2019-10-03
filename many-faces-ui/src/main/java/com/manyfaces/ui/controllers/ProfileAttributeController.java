@@ -4,18 +4,24 @@
 package com.manyfaces.ui.controllers;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
 import com.manyfaces.model.Profile;
 import com.manyfaces.spi.ProfilesRepository;
 import com.manyfaces.spi.Registry;
+import com.manyfaces.spi.RootComponent;
 import com.manyfaces.ui.ProfileEditHome;
+import java.io.IOException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import org.openide.util.Lookup;
 
@@ -46,6 +52,7 @@ public class ProfileAttributeController {
      */
     @FXML
     public void initialize() {
+        cancelButton.setOnAction(e -> showCancelDialog());
     }
 
     public void setHeaderText(String text) {
@@ -99,6 +106,27 @@ public class ProfileAttributeController {
                 .ifPresent(name -> {
                     LOOKUP.lookup(ProfilesRepository.class).add(name);
                 });
+    }
+
+    private void showCancelDialog() {
+        URL location = getClass().getResource("/views/ProfileCancelDialog.fxml");
+        FXMLLoader loader = new FXMLLoader(location);
+        Pane pane = null;
+        ProfileCancelDialogController controller = null;
+
+        try {
+            pane = loader.load();
+            controller = loader.getController();
+        } catch (IOException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+        }
+
+        if (pane != null && controller != null) {
+            JFXDialog dialog = new JFXDialog();
+            dialog.setContent(pane);
+            controller.setDialog(dialog);
+            dialog.show(LOOKUP.lookup(RootComponent.class).getRoot());
+        }
     }
 
 }
